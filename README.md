@@ -3,7 +3,7 @@
 Dataset with $n \times n$ (scaled) doubly stochastic matrices. Entries are non-negative and rows and columns sum to $s$. Each ```json``` file has 100 objects with the entries:
   - **n**: ```Int``` with size of the (scaled) doubly stochastic matrix
   - **s:** ```Int``` with the scale of the doubly stochastic matrix   
-  - **scaled_doubly_stochastic_matrix:** ```Array{Int}``` with the scaled doubly stochastic matrix (columns stacked as a vector)
+  - **scaled_doubly_stochastic_matrix:** ```Array{Int}``` of size $n^2$ with the scaled doubly stochastic matrix (columns stacked as a vector)
   - **weights:** ```Array{Int}```of length $k$. The array entries sum to $s$ 
   - **permutations:** ```Array{Int}``` with $k$ permutation vectors of length $n$ stacked as a sigle vector
 
