@@ -21,7 +21,7 @@ In Julia:
 using JSON3
 
 data = JSON3.read("file_name.json")
-D = data[id].doubly_stochastic_matrix
+D = data[id].scaled_doubly_stochastic_matrix
 D = reshape(D,n,n)
 ```
 
