@@ -1,4 +1,4 @@
-# Doubly stochastic matrices dataset
+# DSM Dataset
 
 Dataset with $n \times n$ (scaled) doubly stochastic matrices. Entries are non-negative and rows and columns sum to $s$. Each entry in the ```json``` file has the fields:
   - **n**: ```Int``` with size of the (scaled) doubly stochastic matrix
@@ -32,7 +32,7 @@ import numpy as np
 
 f = open("file_name.json")
 data = json.load(f)
-D = data[id]['doubly_stochastic_matrix']
+D = data[id]['scaled_doubly_stochastic_matrix']
 D = np.array(D)
 D = np.reshape(D, (n,n))
 ```
