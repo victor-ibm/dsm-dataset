@@ -1,6 +1,6 @@
 # DSM Dataset
 
-Dataset with $n \times n$ (scaled) doubly stochastic matrices. Entries are non-negative and rows and columns sum to $s$. Each entry in the ```json``` file has the fields:
+Dataset with $n \times n$ (scaled) doubly stochastic matrices. Entries are non-negative and rows and columns sum to $s$. Eeach ```json``` file has 100 object, each with the values:
   - **n**: ```Int``` with size of the (scaled) doubly stochastic matrix
   - **s:** ```Int``` with the scale of the doubly stochastic matrix   
   - **scaled_doubly_stochastic_matrix:** ```Array{Int}``` with the scaled doubly stochastic matrix (columns stacked as a vector)
