@@ -1,10 +1,9 @@
 # Doubly Stochastic Matrix Dataset
 
-Dataset with $n \times n$ doubly stochastic matrices. Entries are non-negative and rows and columns sum to 1. Each ```json``` file has 100 objects with entries:
+Dataset with $n \times n$ (scaled) doubly stochastic matrices. Entries are non-negative and rows and columns sum to 1. Each ```json``` file has 100 objects with entries:
   - **n**: ```Int```; the doubly stochastic matrix size
-  - **doubly_stochatic_matrix:** ```Array{Float}``` of size $n^2$; a doubly stochastic matrix where columns are stacked as a vector
-  - **scale:** ```Int``` such that ```doubly_stochatic_matrix * scale``` has no decimal points
   - **scaled_doubly_stochastic_matrix:** ```Array{Int}``` of size $n^2$; scaled doubly stochastic matrix
+  - **scale:** ```Int``` such that ```scaled_doubly_stochatic_matrix / scale``` is doubly stochastic
   - **weights:** ```Array{Int}```of length $n$ (sparse) or $n^2$ (dense). The array entries sum to ```scale``` 
   - **permutations:** ```Array{Int}``` with $n$ (sparse) or $n^2$ (dense) permutation vectors stacked as a sigle vector. Each permutation vector has length $n$
 
@@ -22,7 +21,7 @@ In Julia:
 using JSON3
 
 data = JSON3.read("file_name.json")
-D = data[id].doubly_stochastic_matrix
+D = data[id].scaled_doubly_stochastic_matrix
 D = reshape(D,n,n)
 ```
 
@@ -33,7 +32,7 @@ import numpy as np
 
 f = open("file_name.json")
 data = json.load(f)
-D = data[id]['doubly_stochastic_matrix']
+D = data[id]['scaled_doubly_stochastic_matrix']
 D = np.array(D)
 D = np.reshape(D, (n,n))
 ```
